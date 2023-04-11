@@ -1,9 +1,67 @@
-.header-nav {
+/* .header-nav {
   position: sticky;
-  box-shadow: 0px 10px 20px #ccc;
   margin-bottom: 10px;
+} */
+
+.navbar {
+  height: 70px;
+  /* background-color: rgba(255, 255, 255, 0.5); */
+  /* border-top: 2px solid #2c3e50;
+  border-bottom: 2px solid #2c3e50; */
+  font-family: 'Open Sans', sans-serif;
+
 }
-.header-ul {
+.navbar-brand,
+.navbar-nav .nav-link {
+  color: #2c3e50;
+  /* border: 2px solid transparent; */
+}
+
+.navbar-brand:hover,
+.navbar-nav .nav-link:hover {
+  color: #000000;
+  /* border-color: #2c3e50; */
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  /* background-color: rgba(255, 255, 255, 0.7); */
+  background-color: white;
+
+}
+
+nav ul li a {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+nav ul li a .badge {
+  position: absolute;
+  top: -5px;
+  right: -8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  font-family: 'Open Sans';
+}
+
+.cart-icon{
+
+  width: 28px;
+  height: 28px;
+  margin: 0px;
+}
+/* .header-ul {
   display: flex;
   flex: 1;
   justify-content: space-between;
@@ -11,4 +69,4 @@
 .header-h2 {
   font-family: monospace;
   font-size: 30px;
-}
+} */

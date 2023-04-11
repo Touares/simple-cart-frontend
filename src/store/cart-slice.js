@@ -6,7 +6,8 @@ const cartSlice = createSlice({
     initialState: {
         itemsList:[],
         totalQuantity:0,
-        showCart: false
+        showCart: false,
+        showCarts: false
 
     },
     reducers: {
@@ -27,7 +28,8 @@ const cartSlice = createSlice({
                     price:newItem.price,
                     quantity: 1,
                     totalPrice:newItem.price,
-                    name: newItem.name
+                    name: newItem.name,
+                    image: newItem.image
                     
                 })
                 state.totalQuantity++;
@@ -35,17 +37,33 @@ const cartSlice = createSlice({
         },
         removeFromCart(state,action) {
             const id = action.payload
-            const existingItem = state.itemsList.find(item => item.id === id);
+            const existingItem = state.itemsList.find(item => item.item_id === id);
             if (existingItem.quantity === 1) {
-                state.itemsList = state.itemsList.filter(item => item.id !== id);
+                state.itemsList = state.itemsList.filter(item => item.item_id !== id);
                 state.totalQuantity --;
             } else {
                 existingItem.quantity--;
                 existingItem.totalPrice -=  existingItem.price; 
             }
         },
+        deleteFromCart(state, action) {
+            const id = action.payload;
+            state.itemsList = state.itemsList.filter(item => item.item_id !== id);
+            state.totalQuantity --;
+        },
         setShowCart(state) {
             state.showCart = !state.showCart;
+            // state.showCarts = !state.showCarts
+            if (state.showCart) {
+                state.showCarts = false;
+            }
+        },
+        setShowCarts(state) {
+            state.showCarts = !state.showCarts;
+            // state.showCarts = !state.showCarts
+            if (state.showCarts) {
+                state.showCart = false;
+            }
         }
     },
 })
