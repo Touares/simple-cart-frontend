@@ -49,7 +49,7 @@ const Cart = () => {
     }
     return cart
   }
-  const submitOrder = async () => {
+  const submitOrder =  () => {
     // await sendCartData(mapToCart());
     try {
       // const {data} = await axios.post(
@@ -69,101 +69,114 @@ const Cart = () => {
     }
   };
 
-  return (
-    <div className="custom-container">
 
-    <table className="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">Item</th>
-      <th scope="col">Price</th>
-      <th scope="col">Quantity</th>
-      <th scope="col">Total</th>
-    </tr>
-  </thead>
-  <tbody>
-    {cartItems.map(item => {
-      const it = {
-        id:item.item_id,
-        price:item.price,
-        name:item.name,
-      }
-      return (
-        <tr key={it.id} className="table-secondary">
-      <th scope="row">
-        <div className="product-cell">
-        <Link style={{textDecoration:'none'}} sty to={`/product/${it.id}`}>
-          <div>
-        <img className="item_img" src={item.image}/>
-          </div>
-          <div>
-        {item.name}
-          </div>
-        </Link>
+  if (quantity === 0) {
+    console.log(cartItems)
+    return (<div> You have not added products to your cart yet</div>);
+  } else {
 
-
-        </div>
-        </th>
-      <td>${item.price}</td>
-      <td>
-
-        <AddRemoveButtons  product={it}/>
-
-      {/* <div className="btn-group" role="group">
-  <button type="button" onClick={() =>removeHandler(item.item_id)}
-   className="btn btn-outline-primary btn-sm "
-   style={{fontSize: '14px', fontWeight: '400', fontFamily: 'Open Sans'}}>
-    -
-  </button>
-  <button type="button" className="btn btn-secondary btn-sm my-button" style={{ cursor: 'normal', fontSize: '14px', fontWeight: '400', fontFamily: 'Open Sans', color:'#212529'}}>
-  {item.quantity}
-  </button>
-  <button type="button" 
-  onClick={() => addHandler(it)}
-  className="btn btn-outline-primary btn-sm " 
-  style={{fontSize: '14px', fontWeight: '400', fontFamily: 'Open Sans' }}>
-    +
-  </button>
-</div> */}
-
-        
-        </td>
-      <td>${item.totalPrice.toFixed(2)}</td>
+    return (
+  
       
-      </tr>
-      )
-    })}
+        <div className="custom-container">
     
-  </tbody>
-</table>
-    <div className="checkout">
-      <div className="list-button">
-
-    <ul className="list-group">
-      <li className="list-group-item d-flex justify-content-between align-items-center">
-        Subtotal
-        <span className="badge bg-primary rounded-pill">${total.toFixed(2)}</span>
-      </li>
-      <li className="list-group-item d-flex justify-content-between align-items-center">
-        Delivery Tax
-        <span className="badge bg-primary rounded-pill">${ delivery}</span>
-      </li>
-      <li className="list-group-item d-flex justify-content-between align-items-center">
-        Grand Total
-        <span className="badge bg-primary rounded-pill">${(total - delivery).toFixed(2)}</span>
-      </li>
-    </ul>
-
-    <div className="d-flex justify-content-end">
-    <button onClick={submitOrder} className="btn btn-outline-primary">Place Order</button>
-  </div>
-      </div>
-    </div>
-    {/* <div className="cartIcon">
-      <h3 onClick={showCart}>Cart: {quantity} Items</h3>
+        <table className="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Item</th>
+          <th scope="col">Price</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        {cartItems.map(item => {
+          const it = {
+            id:item.item_id,
+            price:item.price,
+            name:item.name,
+          }
+          return (
+            <tr key={it.id} className="table-secondary">
+          <th scope="row">
+            <div className="product-cell">
+            <Link style={{textDecoration:'none'}} sty to={`/product/${it.id}`}>
+              <div>
+            <img className="item_img" src={item.image}/>
+              </div>
+              <div>
+            {item.name}
+              </div>
+            </Link>
+    
+    
+            </div>
+            </th>
+          <td>${item.price}</td>
+          <td>
+    
+            <AddRemoveButtons  product={it}/>
+    
+          {/* <div className="btn-group" role="group">
+      <button type="button" onClick={() =>removeHandler(item.item_id)}
+       className="btn btn-outline-primary btn-sm "
+       style={{fontSize: '14px', fontWeight: '400', fontFamily: 'Open Sans'}}>
+        -
+      </button>
+      <button type="button" className="btn btn-secondary btn-sm my-button" style={{ cursor: 'normal', fontSize: '14px', fontWeight: '400', fontFamily: 'Open Sans', color:'#212529'}}>
+      {item.quantity}
+      </button>
+      <button type="button" 
+      onClick={() => addHandler(it)}
+      className="btn btn-outline-primary btn-sm " 
+      style={{fontSize: '14px', fontWeight: '400', fontFamily: 'Open Sans' }}>
+        +
+      </button>
     </div> */}
-    </div>
-  );
+    
+            
+            </td>
+          <td>${item.totalPrice.toFixed(2)}</td>
+          
+          </tr>
+          )
+        })}
+        
+      </tbody>
+    </table>
+        <div className="checkout">
+          <div className="list-button">
+    
+        <ul className="list-group order-list">
+          <li className="list-group-item d-flex justify-content-between align-items-center">
+            Subtotal
+            <span className="badge bg-primary rounded-pill">${total.toFixed(2)}</span>
+          </li>
+          <li className="list-group-item d-flex justify-content-between align-items-center">
+            Delivery Tax
+            <span className="badge bg-primary rounded-pill">${ delivery}</span>
+          </li>
+          <li className="list-group-item d-flex justify-content-between align-items-center">
+            Grand Total
+            <span className="badge bg-primary rounded-pill">${(total - delivery).toFixed(2)}</span>
+          </li>
+        </ul>
+    
+        <div className="d-flex justify-content-end">
+        <button onClick={submitOrder} className="btn btn-outline-primary">Place Order</button>
+      </div>
+          </div>
+        </div>
+        {/* <div className="cartIcon">
+          <h3 onClick={showCart}>Cart: {quantity} Items</h3>
+        </div> */}
+        </div>
+      
+      
+      
+    );
+  }
+
 };
 
 export default Cart;

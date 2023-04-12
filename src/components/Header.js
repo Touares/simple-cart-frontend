@@ -3,12 +3,22 @@ import Carts from "./carts";
 import Cart from "./Cart";
 import "./Header.css";
 import {Link, NavLink} from 'react-router-dom'
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { headerActions } from "../store/header.slice";
 
 
 
 const Header = () => {
   const quantity = useSelector((state) => state.cart.totalQuantity);
+  const dispatch = useDispatch();
+  const show =useSelector((state) => state.header.show);
+
+
+  const showHeader = () => {
+    dispatch(headerActions.setShow())
+
+  }
 
   return (
     <header>
@@ -18,7 +28,15 @@ const Header = () => {
   <div className="container-fluid">
     <NavLink style={{marginRight: '50px', marginLeft: '10px'}} className="nav-link" to="/">ITShop</NavLink>
 
-    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
+    <div className="cart-icon-responsive">
+    <NavLink className="nav-link " to="cart" style={{ marginTop: '7px'}}>
+            <img className="cart-icon" src="https://img.icons8.com/pastel-glyph/64/000000/paper-bag--v2.png"/>
+            <span class="badge cart-icon-responsive">{quantity}</span>
+            </NavLink>
+
+    </div>
+
+    <button   className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
     <div className="collapse navbar-collapse" id="navbarColor03">
@@ -45,9 +63,18 @@ const Header = () => {
 
     <ul className="d-flex">
     <li className="nav-item">
+    {/* <div className="d-flex d-lg-none">
+      <NavLink className="nav-link cart-icon" to="cart" style={{ marginTop: '7px'}}>
+        <img className="cart-icon" src="https://img.icons8.com/pastel-glyph/64/000000/paper-bag--v2.png"/>
+        <span class="badge">{quantity}</span>
+      </NavLink>
+    </div> */}
+
+
           <NavLink className="nav-link cart-icon" to="cart" style={{ marginTop: '7px'}}>
-            <img className="cart-icon" src="https://img.icons8.com/pastel-glyph/64/000000/paper-bag--v2.png"/>
-            <span class="badge">{quantity}</span></NavLink>
+            <img className="cart-icon cart-icon-non-responsive" src="https://img.icons8.com/pastel-glyph/64/000000/paper-bag--v2.png"/>
+            <span class="badge cart-icon-non-responsive">{quantity}</span>
+            </NavLink>
           {/* <a className="nav-link" href="/cart"><img src="./cart.png" alt="cart" /></a> */}
         </li>
     </ul>

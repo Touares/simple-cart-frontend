@@ -4,6 +4,7 @@ import cartSlice from "./cart-slice";
 import createdCartsSlice from "./created-carts-slice";
 import productsSlice from "./products-slice";
 import productSlice from "./product-slice";
+import headerSlice from "./header.slice";
 
 
 const store = configureStore({
@@ -12,7 +13,8 @@ const store = configureStore({
         auth: authSlice.reducer,
         carts: createdCartsSlice.reducer,
         products: productsSlice.reducer,
-        product: productSlice.reducer
+        product: productSlice.reducer,
+        header: headerSlice.reducer
     }
 })
 

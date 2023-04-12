@@ -1,3 +1,14 @@
 .list-group {
     border-radius: 0px !important;
+    display: flex;
+
 }
+
+@media (max-width: 767px) {
+    .filtering-list {
+      display: flex !important;
+      flex-direction: row !important;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+  }

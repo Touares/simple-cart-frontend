@@ -19,7 +19,7 @@ const Filter = (props) => {
     
     
     return ( 
-      <ul class="list-group">
+      <ul class="list-group filtering-list">
         <li onClick={() => handleFilter('all')}  style={{cursor: "pointer"}}  
             // className="list-group-item active"><h5>All</h5></li>
            className={filter === 'all' ? "list-group-item active": "list-group-item" }><h5>All Categories</h5></li> 

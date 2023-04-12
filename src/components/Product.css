@@ -87,6 +87,28 @@ color: black;
   justify-content: center;
 }
 
+.total-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.search {
+  width: 340px;
+}
+
+.products {
+  width: 1000px;
+}
+
+@media (max-width: 767px) {
+  /* .row {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  } */
+}
+
 /* .product-cart-icon{
 
   width: 5px;

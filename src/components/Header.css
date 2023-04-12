@@ -4,7 +4,7 @@
 } */
 
 .navbar {
-  height: 70px;
+  /* height: 70px; */
   /* background-color: rgba(255, 255, 255, 0.5); */
   /* border-top: 2px solid #2c3e50;
   border-bottom: 2px solid #2c3e50; */
@@ -61,6 +61,10 @@ nav ul li a .badge {
   height: 28px;
   margin: 0px;
 }
+
+.cart-icon-responsive {
+  display: none !important;
+}
 /* .header-ul {
   display: flex;
   flex: 1;
@@ -70,3 +74,18 @@ nav ul li a .badge {
   font-family: monospace;
   font-size: 30px;
 } */
+
+
+
+
+@media (max-width:991px) {
+.cart-icon-responsive {
+  display: block !important;
+}
+
+.nav-item  .cart-icon {
+  display: none;
+}
+
+}
+

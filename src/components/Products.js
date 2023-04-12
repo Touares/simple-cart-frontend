@@ -96,13 +96,13 @@ useEffect ( async () => {
 
 
   return (
-    <div className="row">
-      <div className="col-3">
+    <div className="total-container">
+      <div className="search">
       
       <SearchBox small={true} onChange={handleCategorySearch} placeHolder = 'search for categories' value = {categorySearch}/>
       <Filter filter={filter} handleFilter={handleFilter} query = {filteredCategories}/>
     </div>
-    <div className="col-9">
+    <div className="products">
     
       <SearchBox onChange= {handleProductSearch}  placeHolder= 'search for products' value = {productSearch}/>
 

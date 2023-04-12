@@ -69,11 +69,11 @@ const Detailproduct = () => {
 
     return ( 
         
-  <div style={{marginTop:'20px'}} className="row">
-    <div className="col-3">
+  <div style={{marginTop:'20px'}} className="product-container">
+    <div className="image">
       <img src={product.image} alt="" />
     </div>
-    <div style={{paddingTop:'20px'}} className="col-6">
+    <div style={{paddingTop:'20px'}} className="description">
         <div className='info-container'>
 
         <h3>{product.title}</h3>
@@ -97,7 +97,7 @@ const Detailproduct = () => {
 
     
     </div>
-    <div style={{paddingTop:'80px', paddingRight:'20px'}} className="col-3">
+    <div style={{paddingTop:'80px', paddingRight:'20px'}} className="add">
       {showButton()}
     </div>
   </div>
