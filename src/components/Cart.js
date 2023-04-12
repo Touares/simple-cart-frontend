@@ -72,7 +72,8 @@ const Cart = () => {
 
   if (quantity === 0) {
     console.log(cartItems)
-    return (<div> You have not added products to your cart yet</div>);
+    return (<div>         <h1 className="text-center">You have not added products to your cart yet</h1>
+    </div>);
   } else {
 
     return (

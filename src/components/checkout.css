@@ -54,6 +54,9 @@ form {
     width: 70%;
     color: black;
 }
+.form-label {
+    color: inherit;
+}
 
 .item-quantity {
     width: 10%;
