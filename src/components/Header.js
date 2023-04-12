@@ -31,7 +31,7 @@ const Header = () => {
     <div className="cart-icon-responsive">
     <NavLink className="nav-link " to="cart" style={{ marginTop: '7px'}}>
             <img className="cart-icon" src="https://img.icons8.com/pastel-glyph/64/000000/paper-bag--v2.png"/>
-            <span class="badge cart-icon-responsive">{quantity}</span>
+            <span class="badge">{quantity}</span>
             </NavLink>
 
     </div>

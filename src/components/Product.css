@@ -102,11 +102,9 @@ color: black;
 }
 
 @media (max-width: 767px) {
-  /* .row {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-  } */
+  .search {
+    width: 90dvw;
+  }
 }
 
 /* .product-cart-icon{

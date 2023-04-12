@@ -65,6 +65,30 @@ nav ul li a .badge {
 .cart-icon-responsive {
   display: none !important;
 }
+
+.cart-icon-responsive a {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.cart-icon-responsive .badge {
+  position: absolute;
+  top: -5px;
+  right: -8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 50%;
+  color: white;
+  font-size: 13px;
+  font-weight: bold;
+  font-family: 'Open Sans';
+}
+
 /* .header-ul {
   display: flex;
   flex: 1;
