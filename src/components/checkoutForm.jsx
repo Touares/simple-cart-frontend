@@ -115,7 +115,7 @@ const CheckOutForm = () => {
                 
             
             )}
-            <div className="checkout-total" >Total: <b>${total}</b></div>
+            <div className="checkout-total" >Total: <b>${total.toFixed(2)}</b></div>
 
 
         </div>

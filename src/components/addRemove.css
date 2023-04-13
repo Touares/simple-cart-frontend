@@ -1,0 +1,14 @@
+/* @media (max-width: 767px) {
+    .add-remove-group {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center;
+        align-items: center;
+    }  
+    
+    .cart-summary {
+        order: 1;
+        width: 90dvw;
+
+    }
+} */

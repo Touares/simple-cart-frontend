@@ -2,6 +2,7 @@ import React from 'react';
 import { cartActions } from '../store/cart-slice';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
+import './addRemove.css'
 // import './button-group.css'
 
 const AddRemoveButtons = (props) => {
@@ -30,7 +31,7 @@ const AddRemoveButtons = (props) => {
 
 
   return ( 
-    <div className="btn-group" role="group">
+    <div className="btn-group-sm add-remove-group" role="group">
   <button type="button" onClick={() =>removeHandler(product.id)}
    className="btn btn-outline-primary btn-sm "
    style={{fontSize: '14px', fontWeight: '400', fontFamily: 'Open Sans'}}>

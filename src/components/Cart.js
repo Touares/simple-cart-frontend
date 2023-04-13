@@ -113,7 +113,7 @@ const Cart = () => {
     
             </div>
             </th>
-          <td>${item.price}</td>
+          <td style={{textAlign:'center'}}>${item.price}</td>
           <td>
     
             <AddRemoveButtons  product={it}/>
