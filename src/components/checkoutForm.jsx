@@ -104,9 +104,9 @@ const CheckOutForm = () => {
     
     
                     <div className="itemSummary">
-                        <div className="item-quantity">{cartItems.find(i => i.id=== item.id).quantity} x </div>
+                        <div className="item-quantity">{item.quantity} x </div>
                         <div className="item-name">{item.name}</div>
-                        <div className="item-price">${cartItems.find(i => i.id=== item.id).totalPrice.toFixed(2)}</div>
+                        <div className="item-price">${item.totalPrice.toFixed(2)}</div>
                     </div>
                 ) 
             }
